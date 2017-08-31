@@ -1,2 +1,41 @@
-<app-child2></app-child2>
-<app-child1></app-child1>
+<div [hidden]="hidden">
+    <h1>Ng For ngIf ng Class</h1>
+    <ol>
+        <ng-container *ngFor="let item of arrays">
+            <li *ngIf="item.id != 3" [ngClass]="{ 'green': item.id % 2 == 0, 'red': item.id % 2 != 0 }">
+                Id = {{ item.id }}, Name = {{ item.name }}
+            </li>
+        </ng-container>
+    </ol>
+</div>
+
+<hr>
+
+<div hidden>
+    <h1 (click)="color = 'red'">ng Style</h1>
+    <ol>
+        <ng-container *ngFor="let item of arrays">
+            <li [ngStyle]="{ color: color }">
+                Id = {{ item.id }}, Name = {{ item.name }}
+            </li>
+        </ng-container>
+    </ol>
+</div>
+
+<div myDirective="blue">
+    <hr>
+    <h1>ng Switch</h1>
+
+    <div [ngSwitch]="switch">
+        <h1 *ngSwitchCase="1">My h1</h1>
+        <h2 *ngSwitchCase="2">My h2</h2>
+        <h3 *ngSwitchCase="3">My h3</h3>
+        <h4 *ngSwitchCase="4">My h4</h4>
+        <h5 *ngSwitchDefault>No data</h5>
+    </div>
+
+    <input type="text" (blur)="onBlur($event)">
+</div>
+
+<hr>
+<h1 myDirective="green">My Directives</h1>
