@@ -30,8 +30,4 @@ export class AppComponent {
     constructor() {
     }
 
-    onBlur(e: KeyboardEvent) {
-        this.switch = <any>(<HTMLInputElement>e.target).value;
-    }
-
 }

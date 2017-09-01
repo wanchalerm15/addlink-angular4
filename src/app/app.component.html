@@ -1,4 +1,4 @@
-<div [hidden]="hidden">
+<div>
     <h1>Ng For ngIf ng Class</h1>
     <ol>
         <ng-container *ngFor="let item of arrays">
@@ -11,7 +11,7 @@
 
 <hr>
 
-<div hidden>
+<div>
     <h1 (click)="color = 'red'">ng Style</h1>
     <ol>
         <ng-container *ngFor="let item of arrays">
@@ -34,7 +34,7 @@
         <h5 *ngSwitchDefault>No data</h5>
     </div>
 
-    <input type="text" (blur)="onBlur($event)">
+    <input type="text" (blur)="switch = $event.target.value">
 </div>
 
 <hr>
