@@ -1,7 +1,18 @@
-<h1 id="hello">
-    firstname = {{ firstname }}
-</h1>
-
-<h1>
-    Lastname = {{ lastname }}
-</h1>
+<div class="panel panel-primary">
+    <div class="panel-heading">App child2 form data</div>
+    <div class="panel-body">
+        <form (submit)="onSubmit($event)" autocomplete="off">
+            <div class="form-group">
+                <label for="id">Id :</label>
+                <input class="form-control" id="id" name="id" />
+            </div>
+            <div class="form-group">
+                <label for="name">Name :</label>
+                <input class="form-control" id="name" name="name" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Send data</button>
+            </div>
+        </form>
+    </div>
+</div>
