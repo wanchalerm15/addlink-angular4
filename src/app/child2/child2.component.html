@@ -10,17 +10,15 @@
                 </tr>
             </thead>
             <tbody>
-                <ng-container *ngFor="let item of items">
-                    <tr [id]="'item-' + item.id">
-                        <td>{{ item.id }}</td>
-                        <td>{{ item.name }}</td>
-                        <td>
-                            <a class="btn btn-sm btn-danger" (click)="onRemove(item)">
-                                <i class="glyphicon glyphicon-remove"></i>
-                            </a>
-                        </td>
-                    </tr>
-                </ng-container>
+                <tr *ngFor="let item of items">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>
+                        <a class="btn btn-sm btn-danger" (click)="onRemove(item)">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </a>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
