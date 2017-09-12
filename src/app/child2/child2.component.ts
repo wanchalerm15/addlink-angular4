@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-child2',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class Child2Component implements OnInit {
 
-  constructor() { }
+  constructor(private service: AppService) { }
 
   ngOnInit() {
   }
@@ -17,7 +18,7 @@ export class Child2Component implements OnInit {
 
   onRemove(item) {
     let items = this.items.filter(i => i != item);
-    this.getItemChange.emit(items);
+    // this.getItemChange.emit(items);
+    this.service.time = new Date();
   }
-
 }

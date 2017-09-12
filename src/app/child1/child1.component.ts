@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
     selector: 'app-child1',
@@ -17,10 +18,13 @@ export class Child1Component {
             name: form.name.value
         };
 
-        this.onCreate.emit(model);
+        // this.onCreate.emit(model);
+        console.log(this.service.time);
 
         form.id.value = null;
         form.name.value = null;
     }
 
+    constructor(private service: AppService) {
+    }
 }
