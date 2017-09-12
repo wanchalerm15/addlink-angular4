@@ -7,24 +7,19 @@ import { AppService } from '../app.service';
     styleUrls: ['./child1.component.css'],
 })
 export class Child1Component {
-
-    @Output('onCreate') onCreate = new EventEmitter();
+    constructor(private service: AppService) { }
 
     onSubmit(event: Event) {
         event.preventDefault();
-        let form = <any>event.target;
-        let model = {
+        const form = <any>event.target;
+        const model = {
             id: form.id.value,
             name: form.name.value
         };
 
-        // this.onCreate.emit(model);
-        console.log(this.service.time);
+        this.service.onSave(model);
 
         form.id.value = null;
         form.name.value = null;
-    }
-
-    constructor(private service: AppService) {
     }
 }
