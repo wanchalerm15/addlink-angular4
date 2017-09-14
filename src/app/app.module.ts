@@ -7,6 +7,7 @@ import { Child2Component } from './child2/child2.component';
 import { Child1Component } from './child1/child1.component';
 import { AppDirective } from './app.directive';
 import { AppService } from './app.service';
+import { AppRouting } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AppService } from './app.service';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRouting
   ],
   providers: [
     AppService

@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router'
 import { AppService } from '../app.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { AppService } from '../app.service';
     styleUrls: ['./child1.component.css'],
 })
 export class Child1Component {
-    constructor(private service: AppService) { }
+    constructor(private service: AppService, private router: Router) { }
 
     onSubmit(event: Event) {
         event.preventDefault();
@@ -21,5 +22,7 @@ export class Child1Component {
 
         form.id.value = null;
         form.name.value = null;
+
+        this.router.navigate(['/', 'child2']);
     }
 }
