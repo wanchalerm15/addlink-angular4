@@ -8,13 +8,16 @@ import { Child1Component } from './child1/child1.component';
 import { AppDirective } from './app.directive';
 import { AppService } from './app.service';
 import { AppRouting } from './app.routing';
+import { GuardComponent } from './guard/guard.component';
+import { AppGuard } from './app.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     Child2Component,
     Child1Component,
-    AppDirective
+    AppDirective,
+    GuardComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { AppRouting } from './app.routing';
     AppRouting
   ],
   providers: [
-    AppService
+    AppService,
+    AppGuard
   ],
   bootstrap: [AppComponent]
 })

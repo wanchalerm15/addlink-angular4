@@ -1,0 +1,17 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">Guard Route</div>
+    <div class="panel-body">
+        <div class="form-group">
+            <label for="">Post message here</label>
+            <textarea (keyup)="message = $event.target.value" rows="10" class="form-control"></textarea>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                Hello {{ username }}
+            </div>
+            <div class="col-sm-3 col-sm-offset-6">
+                <button class="btn btn-primary" (click)="onPostMessage()">Post message</button>
+            </div>
+        </div>
+    </div>
+</div>
