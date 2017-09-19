@@ -5,3 +5,11 @@
 .red {
     background-color: red;
 }
+
+.navbar-default {
+    border-radius: 0;
+}
+
+.active {
+    color: red;
+}

@@ -1,3 +1,20 @@
+<nav class="navbar navbar-default">
+    <div class="container">
+        <a routerLink="/" class="navbar-brand" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            Addlink Angular 4
+        </a>
+
+        <ul class="navbar-nav nav navbar-right">
+            <li routerLinkActive="active">
+                <a routerLink="/child1">Child 1</a>
+            </li>
+            <li routerLinkActive="active">
+                <a routerLink="/child2" [queryParams]="{hello: 'this is sent form Navbar'}">Child 2</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <br>
 <div class="container">
     <div class="row">

@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router'
 import { AppService } from '../app.service';
 
 @Component({
@@ -8,7 +8,15 @@ import { AppService } from '../app.service';
     styleUrls: ['./child1.component.css'],
 })
 export class Child1Component {
-    constructor(private service: AppService, private router: Router) { }
+    constructor(private service: AppService, private router: Router,
+        private activatedRoute: ActivatedRoute) {
+
+        this.activatedRoute.params.forEach(param => this.id = param['id'] || null);
+        this.activatedRoute.data.forEach(value => this.name = value['name'] || null);
+    }
+
+    id: string;
+    name: string;
 
     onSubmit(event: Event) {
         event.preventDefault();
@@ -23,6 +31,6 @@ export class Child1Component {
         form.id.value = null;
         form.name.value = null;
 
-        this.router.navigate(['/', 'child2']);
+        this.router.navigate(['/', 'child2'], { queryParams: { hello: 'this is send form page' } });
     }
 }

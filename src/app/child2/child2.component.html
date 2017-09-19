@@ -10,7 +10,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of items" @myFade>
+                <tr *ngFor="let item of items">
                     <td>{{ item.id }}</td>
                     <td>{{ item.name }}</td>
                     <td>
@@ -21,5 +21,9 @@
                 </tr>
             </tbody>
         </table>
+
+        <div class="well text-center">
+            <h1>{{ hello }}</h1>
+        </div>
     </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AppService } from '../app.service';
 import { AppAnimation } from '../app.animation';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-child2',
@@ -10,11 +11,13 @@ import { AppAnimation } from '../app.animation';
 })
 export class Child2Component {
 
-    constructor(private service: AppService) {
+    constructor(private service: AppService, private activatedRoute: ActivatedRoute) {
         this.items = this.service.getArray;
+        this.activatedRoute.queryParams.forEach(query => this.hello = query['hello']);
 
     }
     items: any[] = [];
+    hello: string;
 
     onRemove(item) {
         this.service.onDelete(item);
