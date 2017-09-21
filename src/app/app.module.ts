@@ -9,7 +9,7 @@ import { AppDirective } from './app.directive';
 import { AppService } from './app.service';
 import { AppRouting } from './app.routing';
 import { GuardComponent } from './guard/guard.component';
-import { AppGuard } from './app.guard';
+import { AppGuard, AppDeactiveGuard } from './app.guard';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { AppGuard } from './app.guard';
   ],
   providers: [
     AppService,
-    AppGuard
+    AppGuard,
+    AppDeactiveGuard
   ],
   bootstrap: [AppComponent]
 })
