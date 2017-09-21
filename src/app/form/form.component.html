@@ -1,0 +1,48 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">Form validation</div>
+    <div class="panel-body">
+        <div class="well" hidden>
+            <h4>NgModel</h4>
+            <form (submit)="onNgModelSubmit()" autocomplete="off">
+                <div class="form-group">
+                    <label for="">Name :</label>
+                    <input type="text" required pattern="^[1-3]{3}$" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel">
+                    <p class="text-danger" *ngIf="ngModelCheck(name, 'required')">The field is required</p>
+                    <p class="text-danger" *ngIf="ngModelCheck(name, 'pattern')">The field is invalid</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Old :</label>
+                    <input type="text" class="form-control" name="old" [(ngModel)]="model.old" #old="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit data</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="well">
+            <h4>NgForm</h4>
+            <form (submit)="onNgFormSubmit(form)" autocomplete="off" #form="ngForm">
+                <div class="form-group">
+                    <label for="">Name :</label>
+                    <input type="text" class="form-control" name="name" ngModel required pattern="^[1-3]{3}$">
+                    <p class="text-danger" *ngIf="ngFormCheck(form.controls['name'], 'required')">The field is required</p>
+                    <p class="text-danger" *ngIf="ngFormCheck(form.controls['name'], 'pattern')">The field is invalid</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Old :</label>
+                    <input type="text" class="form-control" name="old" ngModel>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit data</button>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
